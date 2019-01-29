@@ -5,4 +5,4 @@ a = input("Enter command\n")
 def swithUserCommand(string):
     return constants.userCommandDict[string]
 b = swithUserCommand(a)
-print(type(b))
+print(type(a))
