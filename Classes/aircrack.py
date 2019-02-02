@@ -1,4 +1,6 @@
+import os
 class aircrack:
     @staticmethod
-    def a():
-        print(5)
+    def monitor_mode():
+        result = os.system("airodump-ng --write test wlan0mon")
+

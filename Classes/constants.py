@@ -1,3 +1,3 @@
 from Classes.aircrack import aircrack
 class constants:
-    userCommandDict = [aircrack.a, aircrack.a,aircrack.a]
+    userCommandDict = [aircrack.monitor_mode, aircrack.monitor_mode, aircrack.monitor_mode]
