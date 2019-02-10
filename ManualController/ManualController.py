@@ -7,4 +7,5 @@ class ManualController:
 
     def run(self):
         switch = input("Enter command\n")
-        self.switch_user_command(switch)
+        a = self.switch_user_command(switch)
+        print(a)
