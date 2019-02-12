@@ -8,3 +8,11 @@ class airodumpNet:
         self.beacons = beacons
         self.IV = IV
         self.EESID = EESID
+
+class airodumpStation:
+
+    def __init__(self, MAC, power, packets, BSSID):
+        self.BSSID = BSSID
+        self.MAC = MAC
+        self.power = power
+        self.packets = packets
