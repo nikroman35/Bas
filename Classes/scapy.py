@@ -1,0 +1,3 @@
+#import scapy
+
+#class ScapyManager:

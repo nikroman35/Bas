@@ -11,3 +11,6 @@ class constants:
                        aircrack.search_station,
                        aircrack.aireplay_attack]
                        #Nmap.define_open_ports]
+    intencity = {1: 'fast',
+                 2: 'faster',
+                 3: 'flood'}
