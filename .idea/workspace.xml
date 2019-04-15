@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="baec8bfa-6417-4df8-8e51-307ce5e36d95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Classes/scapy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes/selfConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Bas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/aircrack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/aircrack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/netwox.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/netwox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/nmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/nmap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManualController/ManualController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManualController/ManualController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/txt01-01.cap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/txt01-01.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/txt01-01.kismet.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/txt01-01.kismet.netxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/txt01-01.log.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +21,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Bas$main.coverage" NAME="main Coverage Results" MODIFIED="1553296170513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Bas$nmap.coverage" NAME="nmap Coverage Results" MODIFIED="1550936171327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Classes" />
+    <SUITE FILE_PATH="coverage/Bas$main.coverage" NAME="main Coverage Results" MODIFIED="1555364396442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Bas$test.coverage" NAME="test Coverage Results" MODIFIED="1550935892295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/local/lib/python3.7/dist-packages/nmap" />
+    <SUITE FILE_PATH="coverage/Bas$nmap.coverage" NAME="nmap Coverage Results" MODIFIED="1550936171327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Classes" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -43,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="90">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#18#27#0" expanded="true" />
               </folding>
@@ -53,19 +57,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/airodumpNet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ManualController/ManualController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+            <state relative-caret-position="105">
+              <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -74,19 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/a/txt01-01.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/aircrack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+            <state relative-caret-position="121">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="40" selection-end-column="45" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -97,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/netwox.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="67" />
+            <state relative-caret-position="255">
+              <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
               <folding>
                 <element signature="e#1#37#0" expanded="true" />
               </folding>
@@ -107,9 +93,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/selfConfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#1#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/nmap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="495">
               <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -139,6 +137,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RESULT</find>
+      <find>deauth_attack</find>
+      <find>change_channel</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -152,18 +157,19 @@
         <option value="$PROJECT_DIR$/Classes/airodumpNet.py" />
         <option value="$PROJECT_DIR$/Classes/constants.py" />
         <option value="$PROJECT_DIR$/Classes/netwox.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Classes/nmap.py" />
         <option value="$PROJECT_DIR$/Classes/scapy.py" />
         <option value="$PROJECT_DIR$/ManualController/ManualController.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Classes/selfConfig.py" />
         <option value="$PROJECT_DIR$/Classes/aircrack.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="304" />
-    <option name="y" value="27" />
-    <option name="width" value="1024" />
+    <option name="x" value="183" />
+    <option name="y" value="207" />
+    <option name="width" value="1014" />
     <option name="height" value="741" />
   </component>
   <component name="ProjectView">
@@ -181,11 +187,6 @@
             <path>
               <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bas" type="462c0819:PsiDirectoryNode" />
-              <item name="a" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bas" type="462c0819:PsiDirectoryNode" />
               <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -197,21 +198,6 @@
               <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bas" type="462c0819:PsiDirectoryNode" />
               <item name="ManualController" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (Bas) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="Bas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (Bas) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="dist-packages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -363,7 +349,13 @@
       <workItem from="1553281369539" duration="6916000" />
       <workItem from="1553292836240" duration="2142000" />
       <workItem from="1553295187572" duration="542000" />
-      <workItem from="1553295758594" duration="484000" />
+      <workItem from="1553295758594" duration="790000" />
+      <workItem from="1555266912606" duration="9648000" />
+      <workItem from="1555277760607" duration="556000" />
+      <workItem from="1555278524534" duration="5043000" />
+      <workItem from="1555353825891" duration="5205000" />
+      <workItem from="1555361420914" duration="230000" />
+      <workItem from="1555364309541" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="work with subprocess">
       <created>1549135069705</created>
@@ -393,23 +385,30 @@
       <option name="project" value="LOCAL" />
       <updated>1551039781791</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix app">
+      <created>1553296348395</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1553296348395</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118255000" />
+    <option name="totallyTimeSpent" value="139418000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="745" extended-state="7" />
+    <frame x="0" y="23" width="1366" height="745" extended-state="6" />
     <layout>
       <window_info anchor="top" id="Database" order="0" side_tool="true" visible="true" weight="0.05076142" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48961425" visible="true" weight="0.20984848" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48961425" visible="true" weight="0.23030303" />
       <window_info id="Structure" order="1" sideWeight="0.50970876" side_tool="true" weight="0.14924243" />
       <window_info id="Favorites" order="2" sideWeight="0.51038575" side_tool="true" weight="0.14924243" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924242" weight="0.3282572" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6030303" visible="true" weight="0.4111675" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6030303" weight="0.31302875" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39593908" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -496,7 +495,8 @@
     <MESSAGE value="add airofumpNet class, work with airodump" />
     <MESSAGE value="add airplay" />
     <MESSAGE value="add netwox, nmap" />
-    <option name="LAST_COMMIT_MESSAGE" value="add netwox, nmap" />
+    <MESSAGE value="fix app" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix app" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ManualController/testClas.py" />
@@ -514,14 +514,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/txt01-01.cap" />
     <entry file="file://$PROJECT_DIR$/txt01-02.csv" />
-    <entry file="file://$PROJECT_DIR$/Classes/txt-01.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="84" lean-forward="true" selection-start-line="6" selection-start-column="84" selection-end-line="6" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/txt01-01.csv" />
+    <entry file="file://$PROJECT_DIR$/a/txt01-01.kismet.csv" />
+    <entry file="file://$PROJECT_DIR$/a/txt01-01.cap" />
     <entry file="file://$PROJECT_DIR$/Classes/scapy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -529,18 +524,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a/txt01-01.kismet.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Classes/airodumpNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a/txt01-01.cap">
+    <entry file="file://$PROJECT_DIR$/Classes/txt-01.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="84" lean-forward="true" selection-start-line="6" selection-start-column="84" selection-end-line="6" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a/txt01-01.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="90">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#18#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ManualController/ManualController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/netwox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+          <folding>
+            <element signature="e#1#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/selfConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#1#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/nmap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -555,57 +601,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/airodumpNet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/nmap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/netwox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="67" />
-          <folding>
-            <element signature="e#1#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/aircrack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+        <state relative-caret-position="121">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="40" selection-end-column="45" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ManualController/ManualController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a/txt01-01.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
         </state>
       </provider>
     </entry>

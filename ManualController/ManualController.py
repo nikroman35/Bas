@@ -1,9 +1,10 @@
-import os
+
 from Classes.constants import constants
 from Classes.netwox import Netwox
 from Classes.nmap import Nmap
 from Classes.aircrack import aircrack
 from Classes.nmap import nmap_object
+from Classes.selfConfig import config
 import os
 import glob
 
@@ -28,6 +29,7 @@ class ManualController:
             aircrack.airodump_call()
             aircrack.aireplay_attack()
         elif switch == "2":
+
             self.choose_mode(self)
         #a = self.switch_user_command(switch)
         #print(a)
