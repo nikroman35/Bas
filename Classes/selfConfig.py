@@ -5,6 +5,13 @@ class config:
 
     @staticmethod
 
+    def get_connected_network():
+        info = netifaces.ifaddresses(config.get_actual_interface())
+        addr = info[netifaces.AF_INET][0]['addr']
+        addr_subnet = addr.split('.')[:-1]
+        str_addr_subnet = '.'.join(addr_subnet) + '.1/24'
+        return str_addr_subnet
+
     def get_actual_interface():
         state = netifaces.interfaces()
         interface_array = []

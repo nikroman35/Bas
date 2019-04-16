@@ -55,24 +55,6 @@ class aircrack:
         time.sleep(10)
         os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
 
-        #result.wait()
-        #timer.cancel()
-        #print("QQQ")
-        #os.system("sudo kill %s" % result.pid)
-        #result.terminate()
-        #result.kill()
-
-        #print(result.pid,"PID")
-        #pgid = os.getpgid(result.pid)
-        #subprocess.check_output("sudo kill {}.".format(pgid), shell=True)
-
-    def terminate(process):
-        if process.poll() is None:
-            print('AAA')
-            #subprocess.call('taskkill /F /T /PID ' + str(process.pid))
-            process.terminate()
-            process.kill()
-
     def sort_by_power(arr):
        return arr[8]
 

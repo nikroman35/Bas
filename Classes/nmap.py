@@ -1,6 +1,6 @@
 import nmap
 import os
-
+from Classes.selfConfig import config
 class nmap_object:
     ports = []
     def __init__(self, name):
@@ -11,7 +11,7 @@ class Nmap:
     @staticmethod
     def test_nmap():
         nm = nmap.PortScanner()
-        nm.scan('192.168.0.1/24')
+        nm.scan(config.get_connected_network())
         self_ip = Nmap.get_self_addr()
         print(nm.all_hosts())
         for host in nm.all_hosts():
@@ -43,5 +43,5 @@ class Nmap:
         return nmap_arr
 
     def get_self_addr():
-        ipv4 = os.popen('ip addr show wlan0').read().split("inet ")[1].split("/")[0]
+        ipv4 = os.popen('ip addr show %s' % config.get_actual_interface()).read().split("inet ")[1].split("/")[0]
         return ipv4
