@@ -6,3 +6,5 @@
  nmap
  netifaces
  glob
+
+Перейтив папку с проектом 
