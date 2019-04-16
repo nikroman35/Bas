@@ -3,6 +3,7 @@ import subprocess
 import time
 import os
 import csv
+
 from threading import Timer
 from Classes.airodumpNet import airodumpNet
 from Classes.airodumpNet import airodumpStation
@@ -38,7 +39,9 @@ class aircrack:
         subprocess.call(cmd, shell=True)
 
     def airodump_call():
-        cmd = ('sudo airodump-ng --write /home/bobax/PycharmProjects/Bas/a/txt01 %s' % config.get_actual_interface())
+        a = config.get_airodump_directory()
+        print(a)
+        cmd = ('sudo airodump-ng --write %s/a/txt01 %s' % (config.get_airodump_directory(), config.get_actual_interface()))
         print(cmd)
         #result = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
         #result.communicate()
@@ -62,7 +65,7 @@ class aircrack:
         return arr[10]
 
     def open_csv_file():
-        filename = '/home/bobax/PycharmProjects/Bas/a/txt01-01.csv'
+        filename = ('%s/a/txt01-01.csv' % config.get_airodump_directory())
         with open(filename, 'r', newline = '') as file:
             file_reader = csv.reader(file)
             format_file = [row for row in file_reader]

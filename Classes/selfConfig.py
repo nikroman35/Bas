@@ -1,6 +1,6 @@
-
 import netifaces
 import subprocess
+import os
 class config:
 
     @staticmethod
@@ -27,3 +27,7 @@ class config:
         a = str(out)
         b = a.find('0')
         print(b)
+
+    def get_airodump_directory():
+        home = os.getcwd()
+        return home
