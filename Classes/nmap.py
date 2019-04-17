@@ -25,6 +25,7 @@ class Nmap:
 
     def define_open_ports():
         nm = nmap.PortScanner()
+        print('СКАНИРУЕМАЯ СЕТЬ', config.get_connected_network())
         nm.scan(config.get_connected_network())
         self_ip = Nmap.get_self_addr()
         nmap_arr = []
