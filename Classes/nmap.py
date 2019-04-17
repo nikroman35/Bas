@@ -25,7 +25,7 @@ class Nmap:
 
     def define_open_ports():
         nm = nmap.PortScanner()
-        nm.scan('192.168.0.1/24')
+        nm.scan(config.get_connected_network())
         self_ip = Nmap.get_self_addr()
         nmap_arr = []
         for host in nm.all_hosts():
