@@ -55,7 +55,7 @@ class aircrack:
 
         pro = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                                shell=True, preexec_fn=os.setsid)
-        time.sleep(10)
+        time.sleep(20)
         os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
 
     def sort_by_power(arr):

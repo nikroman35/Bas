@@ -13,7 +13,7 @@ class ManualController:
     syn_flood_targets = []
 
     def remove_files_in_directory(self):
-        files = glob.glob('/home/bobax/PycharmProjects/Bas/a/*')
+        files = glob.glob('%s/a/*' % config.get_airodump_directory())
         for f in files:
             os.remove(f)
 
