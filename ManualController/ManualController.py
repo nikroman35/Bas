@@ -29,11 +29,7 @@ class ManualController:
             aircrack.airodump_call()
             aircrack.aireplay_attack()
         elif switch == "2":
-
             self.choose_mode(self)
-        #a = self.switch_user_command(switch)
-        #print(a)
-
 
     def choose_mode(self):
         #Nmap.test_nmap()
