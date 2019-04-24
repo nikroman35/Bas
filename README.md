@@ -6,5 +6,7 @@
  nmap
  netifaces
  glob
+ hping3
+ aircrack
 
 Перейтив папку с проектом 
