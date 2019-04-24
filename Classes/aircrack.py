@@ -170,7 +170,7 @@ class aireplay:
     def deauth_attack(self, net: airodumpNet, station: airodumpStation = None):
         self.change_channel(net)
         cmd = ""
-        attack_time = int(input("input attack time\n"))
+        attack_time = int(input("input attack time (sec)\n"))
         if station is not None:
             cmd = ('sudo aireplay-ng -0 0 -a %s -c %s %s' %  (net.BSSID, station.MAC, config.get_actual_interface()))
         else:

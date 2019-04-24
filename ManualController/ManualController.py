@@ -7,6 +7,7 @@ from Classes.nmap import nmap_object
 from Classes.selfConfig import config
 import os
 import glob
+import re
 
 class ManualController:
 
@@ -29,16 +30,25 @@ class ManualController:
             aircrack.airodump_call()
             aircrack.aireplay_attack()
         elif switch == "2":
+            aircrack.managed_mode()
             self.choose_mode(self)
+        else:
+            print("wrong format")
 
     def choose_mode(self):
         #Nmap.test_nmap()
         nmap_arr = Nmap.define_open_ports()
-        mode = int(input("Choose attack options \n1: all host attack \n2: manual input host \n"))
-        if mode == 1:
-            self.syn_flood_on_all_hosts(self, nmap_arr)
-        else:
-            self.select_network(self)
+        while True:
+            mode = input("Choose attack options \n1: all host attack \n2: manual input host \n")
+            if mode == '1':
+                self.syn_flood_on_all_hosts(self, nmap_arr)
+                break
+            if mode == '2':
+                self.select_network(self)
+                break
+            else:
+                print("wrong format")
+                continue
 
 
     def syn_flood_on_all_hosts(self, nmap_arr):
@@ -58,21 +68,30 @@ class ManualController:
         network_arr = []
         while True:
             network_name = input("Enter IP or 'exit' \n")
-            if network_name != "exit":
-                nmap_o = nmap_object(network_name)
-                nmap_o.ports = self.select_port(self)
-                network_arr.append(nmap_o)
+            rex = re.compile( "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$")
+            if rex.match(network_name) or network_name == "exit":
+                if network_name != "exit":
+                    nmap_o = nmap_object(network_name)
+                    nmap_o.ports = self.select_port(self)
+                    network_arr.append(nmap_o)
+                else:
+                    print(network_arr)
+                    intencity = int(input("Enter intencity number (fast: 1, faster:2, flood:3)\n"))
+                    self.syn_flood_on_select_host(self, intencity, network_arr)
             else:
-                print(network_arr)
-                intencity = int(input("Enter intencity number (fast: 1, faster:2, flood:3)\n"))
-                self.syn_flood_on_select_host(self, intencity, network_arr)
-                break
+                print("wrong format")
+                continue
 
     def select_port(self):
         port_number_arr = []
         while True:
             port_number = input("Enter port or 'exit' \n")
-            if port_number != "exit":
-                port_number_arr.append(int(port_number))
+            rex = re.compile("^[0-9]+$")
+            if rex.match(port_number) or port_number == "exit":
+                if port_number != "exit":
+                    port_number_arr.append(int(port_number))
+                else:
+                    return port_number_arr
             else:
-                return port_number_arr
+                print("wrong format")
+                continue

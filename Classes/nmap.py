@@ -44,5 +44,5 @@ class Nmap:
         return nmap_arr
 
     def get_self_addr():
-        ipv4 = os.popen('ip addr show %s' % config.get_actual_interface()).read().split("inet ")[1].split("/")[0]
+        ipv4 = os.popen('sudo ip addr show %s' % config.get_actual_interface()).read().split("inet ")[1].split("/")[0]
         return ipv4

